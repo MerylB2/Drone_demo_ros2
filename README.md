@@ -53,8 +53,8 @@ ros2 run demo_nodes_py listener     # terminal 2 : doit afficher "I heard: Hello
 ## Étape 2 : compiler le projet
 
 ```bash
-# Copier le dossier drone_demo_ws dans votre home, puis :
-cd ~/drone_demo_ws
+# Depuis la racine de ce dépôt :
+cd drone_demo_ws                   # toujours compiler depuis la racine du workspace
 colcon build --symlink-install
 source install/setup.bash          # à refaire dans chaque nouveau terminal
 ```
@@ -98,6 +98,13 @@ ros2 run rqt_image_view rqt_image_view /camera/debug
 ros2 run drone_demo mission_manager
 ```
 Vous voyez passer `SEARCH -> ALIGN -> DESCEND -> LAND -> LANDED`, puis le simulateur affiche la position d'atterrissage (en général moins de 15 cm du centre).
+
+![Logs de mission_manager : SEARCH -> ALIGN -> DESCEND -> LAND -> LANDED](media/logs_mission.png)
+
+| Station détectée (ALIGN) | Dernier mètre (LAND) |
+|---|---|
+| ![Vue caméra : station détectée, décalage dx/dy affiché](media/detection_station.png) | ![Vue caméra posée sur le marqueur : station non vue](media/vue_atterrissage.png) |
+| La croix bleue est la verticale du drone, la ligne verte le décalage à corriger. | La caméra est posée sur le marqueur : il remplit l'image et n'est plus détecté. C'est la descente « à l'aveugle ». |
 
 Pour recommencer : `Ctrl+C` partout et relancez.
 
