@@ -1,0 +1,18 @@
+# Fichiers générés par colcon
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+
+# Enregistrements de vols (lourds)
+*.mcap
+*.db3
+
+# Éditeurs / système
+.vscode/
+.idea/
+*.swp
+.DS_Store

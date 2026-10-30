@@ -1,0 +1,24 @@
+# Paramètres de la démo. Modifiez, relancez, observez.
+# « /** » = valable pour tous les nœuds qui déclarent ces paramètres.
+/**:
+  ros__parameters:
+    marker_id: 0
+    marker_size: 0.5      # côté du carré noir, en mètres
+    fov_deg: 80.0         # champ horizontal de la caméra (grand angle type Pi Camera Module 3 Wide)
+
+sim_drone:
+  ros__parameters:
+    start_x: 5.0          # départ à 5 m à l'est...
+    start_y: 4.0          # ...4 m au nord de la station
+    start_z: 4.0          # trop bas pour la voir : le drone devra monter (état SEARCH)
+    drift: 0.15           # dérive résiduelle max (m/s). Essayez 0.3 !
+
+mission_manager:
+  ros__parameters:
+    kp_xy: 0.8
+    ki_xy: 0.25
+    search_altitude: 10.0
+    align_tolerance: 0.15
+    descent_rate_fast: 0.7
+    descent_rate_slow: 0.3
+    land_commit_altitude: 0.9
