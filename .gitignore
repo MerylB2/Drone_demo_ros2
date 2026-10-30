@@ -16,3 +16,6 @@ __pycache__/
 .idea/
 *.swp
 .DS_Store
+
+# Notes personnelles (non versionnées)
+note_test.md
